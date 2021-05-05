@@ -10,7 +10,7 @@ import Foundation
 class Bill: ObservableObject {
     @Published var billAmount = ""
     @Published var numberOfPeople = 1
-    var selectedTip: Tip = .none
+    @Published var selectedTip: Tip = .none
     
     var totalPerPerson: Double {
         let count = Double(numberOfPeople)

@@ -25,6 +25,16 @@ struct ContentView: View {
                         }
                     }
                 }
+                
+                Section (header: Text("How much tip do you want to leave?")){
+                    Picker("Tip percentage", selection: $bill.selectedTip) {
+                        ForEach(Tip.allCases, id:\.self) {
+                            Text($0.description)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+
                 Section (header: Text("Grand Total")) {
                     Text("£\(bill.grandTotal, specifier: "%.2f")")
                 }
