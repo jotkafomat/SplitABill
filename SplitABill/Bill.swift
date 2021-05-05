@@ -7,8 +7,8 @@
 
 import Foundation
 
-class Bill {
-    var billAmount = ""
+class Bill: ObservableObject {
+    @Published var billAmount = ""
     var numberOfPeople = 1
     var selectedTip: Tip = .none
     

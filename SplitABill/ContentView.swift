@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var bill = Bill()
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Form {
+            Section {
+                TextField("Bill Amount", text: $bill.billAmount)
+                    .keyboardType(.decimalPad)
+            }
+            Section (header: Text("Grand Total")) {
+                Text("£\(bill.grandTotal, specifier: "%.2f")")
+            }
+
+        }
     }
 }
 
