@@ -10,12 +10,12 @@ import Foundation
 class Bill {
     var billAmount = ""
     var numberOfPeople = 1
-    var selectedTip: Tip = .twelve
+    var selectedTip: Tip = .none
     
     var totalPerPerson: Double {
-        let amount = Int(billAmount) ?? 0
+        let count = Double(numberOfPeople)
         
-        return Double(amount / numberOfPeople)
+        return grandTotal / count
     }
     
     var grandTotal: Double {
