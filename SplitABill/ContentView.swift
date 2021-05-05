@@ -12,15 +12,28 @@ struct ContentView: View {
     @StateObject private var bill = Bill()
 
     var body: some View {
-        Form {
-            Section {
-                TextField("Bill Amount", text: $bill.billAmount)
-                    .keyboardType(.decimalPad)
-            }
-            Section (header: Text("Grand Total")) {
-                Text("£\(bill.grandTotal, specifier: "%.2f")")
-            }
+        NavigationView {
+            Form {
+                Section {
+                    TextField("Bill Amount", text: $bill.billAmount)
+                        .keyboardType(.decimalPad)
+                }
+                Section {
+                    Picker("Number of people", selection: $bill.numberOfPeople) {
+                        ForEach(Array(1 ..< 5), id: \.self) {
+                            Text($0 == 1 ? "\($0) person": "\($0) people")
+                        }
+                    }
+                }
+                Section (header: Text("Grand Total")) {
+                    Text("£\(bill.grandTotal, specifier: "%.2f")")
+                }
+                
+                Section (header: Text("Amount per person")) {
+                    Text("£\(bill.totalPerPerson, specifier: "%.2f")")
+                }
 
+            }
         }
     }
 }
