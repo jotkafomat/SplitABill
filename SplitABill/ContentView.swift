@@ -37,12 +37,13 @@ struct ContentView: View {
 
                 Section (header: Text("Grand Total")) {
                     Text("£\(bill.grandTotal, specifier: "%.2f")")
+                        .tipColor(isZeroTip: bill.selectedTip == Tip.none)
+
                 }
                 
                 Section (header: Text("Amount per person")) {
                     Text("£\(bill.totalPerPerson, specifier: "%.2f")")
                 }
-
             }
             .navigationBarTitle(Text("WeSplit"))
         }
