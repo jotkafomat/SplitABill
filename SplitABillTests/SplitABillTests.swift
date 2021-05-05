@@ -27,4 +27,14 @@ class SplitABillTests: XCTestCase {
         XCTAssertEqual(bill.totalPerPerson, 50.0)
 
     }
+    
+    func testCheckGrandTotalWhen12PerCentTipIsAdded() {
+        let bill = Bill()
+
+        bill.billAmount = "100"
+        bill.numberOfPeople = 2
+        bill.selectedTip = .twelve
+        
+        XCTAssertEqual(bill.grandTotal, 112)
+    }
 }
