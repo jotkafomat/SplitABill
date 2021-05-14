@@ -45,7 +45,7 @@ struct ContentView: View {
                     Text("£\(bill.totalPerPerson, specifier: "%.2f")")
                 }
             }
-            .navigationBarTitle(Text("WeSplit"))
+            .navigationBarTitle(Text("Split a bill"))
         }
     }
 }

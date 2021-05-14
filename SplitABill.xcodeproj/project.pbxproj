@@ -51,6 +51,7 @@
 		E12871842642A0E700C68580 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		E12871862642A39D00C68580 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		E12871882642B3B200C68580 /* TipColorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipColorModifier.swift; sourceTree = "<group>"; };
+		E17B2483264EA79B003BE7A0 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 		E128714D2642A03200C68580 = {
 			isa = PBXGroup;
 			children = (
+				E17B2483264EA79B003BE7A0 /* .travis.yml */,
 				E12871582642A03200C68580 /* SplitABill */,
 				E128716A2642A03300C68580 /* SplitABillTests */,
 				E12871752642A03300C68580 /* SplitABillUITests */,
