@@ -3,3 +3,4 @@ language: swift
 
 script:
 - fastlane scan
+- fastlane swiftlint
