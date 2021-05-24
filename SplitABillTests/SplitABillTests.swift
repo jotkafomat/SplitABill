@@ -20,31 +20,31 @@ class SplitABillTests: XCTestCase {
 
     func testCheckisDividedByNumberofPeople() {
         let bill = Bill()
-        
+
         bill.billAmount = "100"
         bill.numberOfPeople = 2
-        
+
         XCTAssertEqual(bill.totalPerPerson, 50.0)
 
     }
-    
+
     func testCheckGrandTotalWhen12PerCentTipIsAdded() {
         let bill = Bill()
 
         bill.billAmount = "100"
         bill.numberOfPeople = 2
         bill.selectedTip = .twelve
-        
+
         XCTAssertEqual(bill.grandTotal, 112)
     }
-    
+
     func testCheckIsDividedByByNumberOfPeopleAnd10PercentTipIsAdded() {
         let bill = Bill()
-        
+
         bill.billAmount = "100"
         bill.numberOfPeople = 2
         bill.selectedTip = .ten
-        
+
         XCTAssertEqual(bill.totalPerPerson, 55)
         XCTAssertEqual(bill.grandTotal, 110)
     }

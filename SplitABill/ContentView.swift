@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
     @StateObject private var bill = Bill()
 
     var body: some View {
@@ -25,23 +25,23 @@ struct ContentView: View {
                         }
                     }
                 }
-                
-                Section (header: Text("How much tip do you want to leave?")){
+
+                Section(header: Text("How much tip do you want to leave?")) {
                     Picker("Tip percentage", selection: $bill.selectedTip) {
-                        ForEach(Tip.allCases, id:\.self) {
+                        ForEach(Tip.allCases, id: \.self) {
                             Text($0.description)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
 
-                Section (header: Text("Grand Total")) {
+                Section(header: Text("Grand Total")) {
                     Text("£\(bill.grandTotal, specifier: "%.2f")")
                         .tipColor(isZeroTip: bill.selectedTip == Tip.none)
 
                 }
-                
-                Section (header: Text("Amount per person")) {
+
+                Section(header: Text("Amount per person")) {
                     Text("£\(bill.totalPerPerson, specifier: "%.2f")")
                 }
             }

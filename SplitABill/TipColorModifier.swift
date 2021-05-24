@@ -9,16 +9,16 @@ import Foundation
 import SwiftUI
 
 struct TipColorModifier: ViewModifier {
-    
+
     var isZeroTip: Bool
-    
+
     func body(content: Content) -> some View {
         if isZeroTip {
             return content.foregroundColor(.red)
         }
         return content.foregroundColor(.green)
     }
-    
+
 }
 
 extension View {

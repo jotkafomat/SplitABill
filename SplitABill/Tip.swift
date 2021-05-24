@@ -8,7 +8,7 @@
 import Foundation
 
 enum Tip: Double, CaseIterable {
-    
+
     case none = 0
     case ten = 10
     case twelve = 12
@@ -16,7 +16,7 @@ enum Tip: Double, CaseIterable {
     case thirty = 30
     case seventyfive = 75
     case onehundret = 100
-    
+
     var description: String {
         switch self {
         case .none:
@@ -35,5 +35,5 @@ enum Tip: Double, CaseIterable {
             return "100% "
         }
     }
-    
+
 }

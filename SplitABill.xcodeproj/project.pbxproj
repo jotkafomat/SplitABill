@@ -16,6 +16,7 @@
 		E12871852642A0E700C68580 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12871842642A0E700C68580 /* Bill.swift */; };
 		E12871872642A39D00C68580 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12871862642A39D00C68580 /* Tip.swift */; };
 		E12871892642B3B200C68580 /* TipColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12871882642B3B200C68580 /* TipColorModifier.swift */; };
+		E1D85DB3265BE79D0048CA35 /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E1D85DB2265BE79D0048CA35 /* swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		E12871862642A39D00C68580 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		E12871882642B3B200C68580 /* TipColorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipColorModifier.swift; sourceTree = "<group>"; };
 		E17B2483264EA79B003BE7A0 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
+		E1D85DB2265BE79D0048CA35 /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				E17B2483264EA79B003BE7A0 /* .travis.yml */,
+				E1D85DB2265BE79D0048CA35 /* swiftlint.yml */,
 				E12871582642A03200C68580 /* SplitABill */,
 				E128716A2642A03300C68580 /* SplitABillTests */,
 				E12871752642A03300C68580 /* SplitABillUITests */,
@@ -148,6 +151,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E128717B2642A03300C68580 /* Build configuration list for PBXNativeTarget "SplitABill" */;
 			buildPhases = (
+				E1D85DB0265BE1AD0048CA35 /* Run swiftlint */,
 				E12871522642A03200C68580 /* Sources */,
 				E12871532642A03200C68580 /* Frameworks */,
 				E12871542642A03200C68580 /* Resources */,
@@ -245,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E12871612642A03300C68580 /* Preview Assets.xcassets in Resources */,
+				E1D85DB3265BE79D0048CA35 /* swiftlint.yml in Resources */,
 				E128715E2642A03300C68580 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +269,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E1D85DB0265BE1AD0048CA35 /* Run swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint autocorrect && swiftlint\nelse\n    echo \"SwiftLint is not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E12871522642A03200C68580 /* Sources */ = {
